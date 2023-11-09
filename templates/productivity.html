@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Output Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #AAC4FF;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #4a69cf;
+            position: relative;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .navbar a {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .navbar a.right {
+            float: right;
+        }
+        .navbar a.left {
+            float: left;
+        }
+        .navbar a.center {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .navbar a.button {
+            border: 2px solid #f2f2f2;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            background-color: #0f0303;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        .result {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/" class="button right" style="font-size: 20px;"><strong>Home</strong></a>
+        <a href="#default" class="left" style="font-size: 20px;"><strong>Garment Workers Productivity</strong></a>
+    </div>
+
+<div class="container">
+    <h2>Predicted Productivity</h2>
+    <div class="result">
+        <p>According to the details filled in the last page the predicted Productivity of your workers in terms of percentage is: <span>{{ y }}</span></p>
+    </div>
+    <a href="/predict" class="button">Back to Data Entry</a>
+</div>
+
+</body>
+</html>

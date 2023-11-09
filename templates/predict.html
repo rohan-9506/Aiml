@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Garment Workers Productivity Data Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #D2DAFF;
+            
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #4a69cf;
+            position: relative;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .navbar a {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .navbar a.right {
+            float: right;
+        }
+        .navbar a.left {
+            float: left;
+        }
+        .navbar a.center {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .title {
+            text-align: center;
+            margin-top: 40px;
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #AAC4FF;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .navbar a.button {
+            border: 2px solid #f2f2f2;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            background-color: #0f0303;
+        }
+    </style>
+     <script>
+        window.onload = function() {
+            var form = document.querySelector('form');
+            form.onsubmit = function(e) {
+                e.preventDefault(); // prevent form submission
+                // validate form inputs
+                var inputs = form.querySelectorAll('input[type="text"]');
+                for (var i = 0; i < inputs.length; i++) {
+                    if (inputs[i].value === '') {
+                        alert('Please fill all the fields');
+                        return;
+                    }
+                }
+                // if all inputs are valid, submit form
+                form.submit();
+            };
+        };
+    </script>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/" class="button right" style="font-size: 20px;"><strong>Home</strong></a>
+    <a href="#default" class="left" style="font-size: 20px;"><strong>Garment Workers Productivity</strong></a>
+    <a href="#default" class="center" style="font-size: 20px;">DATA ENTRY</a>
+</div>
+
+<div class="title">
+    <h2 style="color: #333;">INPUT YOUR VALUES</h2>
+</div>
+
+<form action="/data_predict" method="post">
+    <label for="quarter">Quarter:</label>
+    <input type="text" id="quarter" name="quarter">
+
+    <label for="department">Department:</label>
+    <input type="text" id="department" name="department">
+
+    <label for="day">Day of the week:</label>
+    <input type="text" id="day" name="day">
+
+    <label for="team_number">Team Number:</label>
+    <input type="text" id="team_number" name="team_number">
+
+    <label for="time_allocated">Time Allocated:</label>
+    <input type="text" id="time_allocated" name="time_allocated">
+
+    <label for="unfinished_items">Unfinished Items:</label>
+    <input type="text" id="unfinished_items" name="unfinished_items">
+
+    <label for="overtime">Over time:</label>
+    <input type="text" id="overtime" name="overtime">
+
+    <label for="incentive">Incentive:</label>
+    <input type="text" id="incentive" name="incentive">
+
+    <label for="idle_time">Idle Time:</label>
+    <input type="text" id="idle_time" name="idle_time">
+
+    <label for="idle_men">Idle Men:</label>
+    <input type="text" id="idle_men" name="idle_men">
+
+    <label for="no_of_style_change">Number of Style Changes:</label>
+    <input type="text" id="no_of_style_change" name="no_of_style_change">
+
+    <label for="no_of_workers">Number of Workers:</label>
+    <input type="text" id="no_of_workers" name="no_of_workers">
+
+    <label for="actual_productivity">Actual Productivity:</label>
+    <input type="text" id="actual_productivity" name="actual_productivity">
+
+    <p><input type="submit" value="Submit"></p>
+</form>
+
+</body>
+</html>
